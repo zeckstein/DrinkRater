@@ -9,9 +9,12 @@ router.get('/register', function(req,res,next){
 });
 
 //post route for registration needs mongoDB connection, haven't tested the code yet
-/*
+
 //POST /register
 router.post('/register', function(req,res,next){
+    res.send('working on this');
+    /*
+    //still throwing an error that im not sure why, investigate!
     //make sure form fields are not empty or send error message
     if (req.body.email &&
         req.body.firstName &&
@@ -29,8 +32,9 @@ router.post('/register', function(req,res,next){
         err.status = 400;
         return next(err);
     }
+    */
 });
-*/
+
 
 
 //GET /
