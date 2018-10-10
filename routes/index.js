@@ -12,7 +12,7 @@ router.get('/register', function(req,res,next){
 
 //POST /register
 router.post('/register', function(req,res,next){
-    res.send('working on this');
+    res.send('under construction');
     /*
     //still throwing an error that im not sure why, investigate!
     //make sure form fields are not empty or send error message
