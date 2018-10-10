@@ -9,7 +9,6 @@ router.get('/register', function(req,res,next){
 });
 
 //post route for registration needs mongoDB connection, haven't tested the code yet
-
 //POST /register
 router.post('/register', function(req,res,next){
     res.send('under construction');
@@ -34,8 +33,6 @@ router.post('/register', function(req,res,next){
     }
     */
 });
-
-
 
 //GET /
 router.get('/', (req, res) => {
