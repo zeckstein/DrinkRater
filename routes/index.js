@@ -1,6 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
+
+
+//GET /register
+router.get('/register', function(req,res,next){
+    return res.render('register', {title: 'Register'});
+});
+
+
+//POST /register
+router.post('/register', function(req,res,next){
+    return res.send('User created');
+});
+
+
 //GET /
 router.get('/', (req, res) => {
     return res.render('index', {title: 'Home'});
