@@ -1,6 +1,11 @@
 'use strict';
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
+
+//parse incoming requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // serve static files from /public
 app.use(express.static(__dirname + '/public'));
