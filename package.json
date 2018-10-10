@@ -1,7 +1,7 @@
 {
   "name": "drinkrater",
   "version": "1.0.0",
-  "description": "",
+  "description": "Website to rate your favorite individual (food) items so you always remember where the best one was.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
