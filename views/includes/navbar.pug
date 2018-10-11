@@ -6,13 +6,14 @@ nav
       a.nav-link(href='/about') About
     li.nav-item
       a.nav-link(href='/contact') Contact
-    if !currentUser
-      li.nav-item
-        a.nav-link(href='/register') Sign Up
-    
+      
     if currentUser
+      li.nav-item
+        a.nav-link(href='/profile') My Profile
       li.nav-item
         a.nav-link(href='/logout') Log Out
     else
+      li.nav-item
+        a.nav-link(href='/register') Sign Up
       li.nav-item
         a.nav-link(href='/login') Log In
