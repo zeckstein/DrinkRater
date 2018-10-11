@@ -11,9 +11,7 @@ router.get('/register', function(req,res,next){
 //post route for registration needs mongoDB connection, haven't tested the code yet
 //POST /register
 router.post('/register', function(req,res,next){
-    res.send('under construction');
-    /*
-    //still throwing an error that im not sure why, investigate!
+
     //make sure form fields are not empty or send error message
     if (req.body.email &&
         req.body.firstName &&
@@ -26,12 +24,29 @@ router.post('/register', function(req,res,next){
                 err.status = 400;
                 return next(err);            
             }
+
+            //create object from info we want to store
+            var userData = {
+                email: req.body.email,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                password: req.body.password
+            };
+
+            // use schema create to insert doc into mongo
+            User.create(userData, function (err, user){
+                if (err){
+                    return next(err);
+                } else {
+                    return res.redirect('/profile');
+                }
+            });
+
     } else {
         var err = new Error('All fields required.');
         err.status = 400;
         return next(err);
     }
-    */
 });
 
 //GET /
