@@ -90,6 +90,7 @@ router.post('/register', function(req,res,next){
                 if (err){
                     return next(err);
                 } else {
+                    req.session.userId = user._id;
                     return res.redirect('/profile');
                 }
             });
