@@ -5,17 +5,6 @@ var router = express.Router();
 var User = require('../models/user');
 var mid = require('../middleware');
 
-//GET /profile
-router.get('/profile', mid.requiresLogin, function(req,res,next){
-    User.findById(req.session.userId)
-        .exec(function (error, user){
-            if (error) {
-                return next(error);
-            } else {
-                return res.render('profile', {title: 'Profile', name: user.name});
-            }
-        });
-});
 
 //GET /login
 router.get('/login', mid.loggedOut, function(req,res,next){
@@ -42,6 +31,18 @@ router.post('/login', function(req,res,next){
     }
 });
 
+//GET /profile
+router.get('/profile', mid.requiresLogin, function(req,res,next){
+    User.findById(req.session.userId)
+        .exec(function (error, user){
+            if (error) {
+                return next(error);
+            } else {
+                return res.render('profile', {title: 'Profile', name: user.firstName});
+            }
+        });
+});
+
 //GET /logout
 router.get('/logout', function(req,res,next){
     if(req.session){
@@ -51,7 +52,6 @@ router.get('/logout', function(req,res,next){
             else {return res.redirect('/');}
         });
     }
-
 });
 
 
